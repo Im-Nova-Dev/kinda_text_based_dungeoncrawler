@@ -10,8 +10,8 @@ enum room_size {
 	GOD_ROOM
 }
 
-var room_treasure : bool
-var room_combat : bool
+var is_there_treasure : bool
+var is_enemy_in_room : bool 
 
 
 var r_type : room_size

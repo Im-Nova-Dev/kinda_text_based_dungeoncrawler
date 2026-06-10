@@ -25,3 +25,4 @@ var wisdom: int
 var luck: int
 
 var food_loot_table = []
+var equipment_loot_table = []

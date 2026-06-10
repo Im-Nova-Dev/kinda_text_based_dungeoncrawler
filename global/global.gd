@@ -1,6 +1,6 @@
 extends Node
 # global file
-
+var is_player_in_combat :bool = false
 
 var player_party : Array[character_res] = []
 
@@ -45,3 +45,11 @@ func award_clear_points():
 
 	player_difficulty_points += gained
 	number_of_floors_cleared += 1
+
+
+
+
+func test():
+
+	pass
+

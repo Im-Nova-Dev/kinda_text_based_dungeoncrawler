@@ -15,9 +15,8 @@ var max_hunger : int
 var current_thirst : int # if thirst if 0, character dies after 2 rooms
 var max_thirst : int
 
-var hunger_per_room
-var thirst_per_room
-
+var hunger_tick_amount : float
+var thirst_tick_amount : float
 
 var max_hp
 var current_hp
