@@ -5,6 +5,8 @@ var weapon
 var armor
 var accessory
 
+var character_level
+
 var c_class
 
 var char_icon : Texture
@@ -45,7 +47,7 @@ var gathering : int #gather more plants , mushroom , etc
 var hunting : int #gather more meat from animals and edible monsters, more damage vs animals
 
 #everything skills
-var luck: int # bonus to crits ,bonus to everything
+var faith: int # bonus to crits ,bonus to everything
 
 enum character_skills {
 	perception,survival_instinct,willpower,fast_healing

@@ -32,13 +32,10 @@ func show_combat_gui()->void:
 	pass
 
 
-func chose_move()->void:
-	
+func chose_move(_move)->void:
+	current_turn.append(_move)
+	#check if its the last character
 
-
-	var move : combat_move 
-
-	current_turn.append(move)
 
 
 
@@ -51,6 +48,8 @@ func player_finished_turn():
 func sort_moves_by_initiative_roll():
 	pass
 
+func execute_move():
+	pass
 
 func combat_end():
 	pass

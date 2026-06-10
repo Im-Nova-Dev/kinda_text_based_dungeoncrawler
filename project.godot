@@ -35,3 +35,4 @@ theme/custom_font="uid://bnd6oc0y4bwai"
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+environment/defaults/default_clear_color=Color(0.06939147, 0.0033876828, 0.14121875, 1)

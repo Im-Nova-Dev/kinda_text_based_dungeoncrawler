@@ -1,5 +1,11 @@
 extends Resource
-class_name combat_move
+class_name player_combat_move
+
+
+var target
+var source
+
+
 
 var name
 var damage
