@@ -26,11 +26,16 @@ var max_mp
 var current_mp
 
 # combat skills
-var constitution: int #+defense,+health,+carry weight,-poison duration,
+var constitution: int #+defense,+health,+carry weight,-poison duration,%phy def
 var strength: int #+attack power, +stun power, +block chance,%to break door/chest/etc
-var intelligence: int #+magic power , +mana amount
+var intelligence: int #+magic power , +mana amount, %mag def
 var dexterity: int #+accuracy, +dodge ,+parry
 var wisdom: int #+exp earned modifier ,-confusion duration,%elemental defense
+
+
+
+var butcher # gathering food and stuff from enemies
+
 
 # non combat skills
 var investigation : int # ability to spot traps and hidden stuff, find better loot
