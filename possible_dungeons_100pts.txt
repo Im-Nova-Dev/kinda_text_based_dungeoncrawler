@@ -1,0 +1,247 @@
+ALL POSSIBLE DUNGEON OUTCOMES FOR 100 GENERATION POINTS
+============================================================
+
+Algorithm rules:
+- Reserve 30 points for the final boss (always placed last)
+- With the remaining 70 points, repeatedly pick a room type uniformly at random
+  from all types whose cost fits the current remaining budget.
+  (SMALL=10, MEDIUM=15, LARGE=20, BOSS=30)
+- Boss type is allowed during the random phase → multiple bosses possible
+- Stop when < 10 points remain
+- Always append one final BOSS room
+
+Total distinct possible sequences: 182
+
+Length distribution:
+  4 rooms:  12 sequences
+  5 rooms:  62 sequences
+  6 rooms:  80 sequences
+  7 rooms:  27 sequences
+  8 rooms:   1 sequence
+
+Boss count distribution:
+  1 boss (final only): 129 sequences
+  2 bosses:             50 sequences
+  3 bosses:              3 sequences
+
+Points actually spent:
+  - 100 pts: many sequences (exact spend)
+  -  95 pts: many sequences (5 pts left over, can't buy another room)
+
+============================================================
+COMPLETE LIST (sorted by points spent desc, then length, then sequence)
+============================================================
+
+  1. ['BOSS', 'BOSS', 'SMALL', 'BOSS']   | used 100 pts | bosses: 3
+  2. ['BOSS', 'LARGE', 'LARGE', 'BOSS']   | used 100 pts | bosses: 2
+  3. ['BOSS', 'SMALL', 'BOSS', 'BOSS']   | used 100 pts | bosses: 3
+  4. ['LARGE', 'BOSS', 'LARGE', 'BOSS']   | used 100 pts | bosses: 2
+  5. ['LARGE', 'LARGE', 'BOSS', 'BOSS']   | used 100 pts | bosses: 2
+  6. ['SMALL', 'BOSS', 'BOSS', 'BOSS']   | used 100 pts | bosses: 3
+  7. ['BOSS', 'LARGE', 'SMALL', 'SMALL', 'BOSS']   | used 100 pts | bosses: 2
+  8. ['BOSS', 'MEDIUM', 'MEDIUM', 'SMALL', 'BOSS']   | used 100 pts | bosses: 2
+  9. ['BOSS', 'MEDIUM', 'SMALL', 'MEDIUM', 'BOSS']   | used 100 pts | bosses: 2
+ 10. ['BOSS', 'SMALL', 'LARGE', 'SMALL', 'BOSS']   | used 100 pts | bosses: 2
+ 11. ['BOSS', 'SMALL', 'MEDIUM', 'MEDIUM', 'BOSS']   | used 100 pts | bosses: 2
+ 12. ['BOSS', 'SMALL', 'SMALL', 'LARGE', 'BOSS']   | used 100 pts | bosses: 2
+ 13. ['LARGE', 'BOSS', 'SMALL', 'SMALL', 'BOSS']   | used 100 pts | bosses: 2
+ 14. ['LARGE', 'LARGE', 'LARGE', 'SMALL', 'BOSS']   | used 100 pts | bosses: 1
+ 15. ['LARGE', 'LARGE', 'MEDIUM', 'MEDIUM', 'BOSS']   | used 100 pts | bosses: 1
+ 16. ['LARGE', 'LARGE', 'SMALL', 'LARGE', 'BOSS']   | used 100 pts | bosses: 1
+ 17. ['LARGE', 'MEDIUM', 'LARGE', 'MEDIUM', 'BOSS']   | used 100 pts | bosses: 1
+ 18. ['LARGE', 'MEDIUM', 'MEDIUM', 'LARGE', 'BOSS']   | used 100 pts | bosses: 1
+ 19. ['LARGE', 'SMALL', 'BOSS', 'SMALL', 'BOSS']   | used 100 pts | bosses: 2
+ 20. ['LARGE', 'SMALL', 'LARGE', 'LARGE', 'BOSS']   | used 100 pts | bosses: 1
+ 21. ['LARGE', 'SMALL', 'SMALL', 'BOSS', 'BOSS']   | used 100 pts | bosses: 2
+ 22. ['MEDIUM', 'BOSS', 'MEDIUM', 'SMALL', 'BOSS']   | used 100 pts | bosses: 2
+ 23. ['MEDIUM', 'BOSS', 'SMALL', 'MEDIUM', 'BOSS']   | used 100 pts | bosses: 2
+ 24. ['MEDIUM', 'LARGE', 'LARGE', 'MEDIUM', 'BOSS']   | used 100 pts | bosses: 1
+ 25. ['MEDIUM', 'LARGE', 'MEDIUM', 'LARGE', 'BOSS']   | used 100 pts | bosses: 1
+ 26. ['MEDIUM', 'MEDIUM', 'BOSS', 'SMALL', 'BOSS']   | used 100 pts | bosses: 2
+ 27. ['MEDIUM', 'MEDIUM', 'LARGE', 'LARGE', 'BOSS']   | used 100 pts | bosses: 1
+ 28. ['MEDIUM', 'MEDIUM', 'SMALL', 'BOSS', 'BOSS']   | used 100 pts | bosses: 2
+ 29. ['MEDIUM', 'SMALL', 'BOSS', 'MEDIUM', 'BOSS']   | used 100 pts | bosses: 2
+ 30. ['MEDIUM', 'SMALL', 'MEDIUM', 'BOSS', 'BOSS']   | used 100 pts | bosses: 2
+ 31. ['SMALL', 'BOSS', 'LARGE', 'SMALL', 'BOSS']   | used 100 pts | bosses: 2
+ 32. ['SMALL', 'BOSS', 'MEDIUM', 'MEDIUM', 'BOSS']   | used 100 pts | bosses: 2
+ 33. ['SMALL', 'BOSS', 'SMALL', 'LARGE', 'BOSS']   | used 100 pts | bosses: 2
+ 34. ['SMALL', 'LARGE', 'BOSS', 'SMALL', 'BOSS']   | used 100 pts | bosses: 2
+ 35. ['SMALL', 'LARGE', 'LARGE', 'LARGE', 'BOSS']   | used 100 pts | bosses: 1
+ 36. ['SMALL', 'LARGE', 'SMALL', 'BOSS', 'BOSS']   | used 100 pts | bosses: 2
+ 37. ['SMALL', 'MEDIUM', 'BOSS', 'MEDIUM', 'BOSS']   | used 100 pts | bosses: 2
+ 38. ['SMALL', 'MEDIUM', 'MEDIUM', 'BOSS', 'BOSS']   | used 100 pts | bosses: 2
+ 39. ['SMALL', 'SMALL', 'BOSS', 'LARGE', 'BOSS']   | used 100 pts | bosses: 2
+ 40. ['SMALL', 'SMALL', 'LARGE', 'BOSS', 'BOSS']   | used 100 pts | bosses: 2
+ 41. ['BOSS', 'SMALL', 'SMALL', 'SMALL', 'SMALL', 'BOSS']   | used 100 pts | bosses: 2
+ 42. ['LARGE', 'LARGE', 'SMALL', 'SMALL', 'SMALL', 'BOSS']   | used 100 pts | bosses: 1
+ 43. ['LARGE', 'MEDIUM', 'MEDIUM', 'SMALL', 'SMALL', 'BOSS']   | used 100 pts | bosses: 1
+ 44. ['LARGE', 'MEDIUM', 'SMALL', 'MEDIUM', 'SMALL', 'BOSS']   | used 100 pts | bosses: 1
+ 45. ['LARGE', 'MEDIUM', 'SMALL', 'SMALL', 'MEDIUM', 'BOSS']   | used 100 pts | bosses: 1
+ 46. ['LARGE', 'SMALL', 'LARGE', 'SMALL', 'SMALL', 'BOSS']   | used 100 pts | bosses: 1
+ 47. ['LARGE', 'SMALL', 'MEDIUM', 'MEDIUM', 'SMALL', 'BOSS']   | used 100 pts | bosses: 1
+ 48. ['LARGE', 'SMALL', 'MEDIUM', 'SMALL', 'MEDIUM', 'BOSS']   | used 100 pts | bosses: 1
+ 49. ['LARGE', 'SMALL', 'SMALL', 'LARGE', 'SMALL', 'BOSS']   | used 100 pts | bosses: 1
+ 50. ['LARGE', 'SMALL', 'SMALL', 'MEDIUM', 'MEDIUM', 'BOSS']   | used 100 pts | bosses: 1
+ 51. ['LARGE', 'SMALL', 'SMALL', 'SMALL', 'LARGE', 'BOSS']   | used 100 pts | bosses: 1
+ 52. ['MEDIUM', 'LARGE', 'MEDIUM', 'SMALL', 'SMALL', 'BOSS']   | used 100 pts | bosses: 1
+ 53. ['MEDIUM', 'LARGE', 'SMALL', 'MEDIUM', 'SMALL', 'BOSS']   | used 100 pts | bosses: 1
+ 54. ['MEDIUM', 'LARGE', 'SMALL', 'SMALL', 'MEDIUM', 'BOSS']   | used 100 pts | bosses: 1
+ 55. ['MEDIUM', 'MEDIUM', 'LARGE', 'SMALL', 'SMALL', 'BOSS']   | used 100 pts | bosses: 1
+ 56. ['MEDIUM', 'MEDIUM', 'MEDIUM', 'MEDIUM', 'SMALL', 'BOSS']   | used 100 pts | bosses: 1
+ 57. ['MEDIUM', 'MEDIUM', 'MEDIUM', 'SMALL', 'MEDIUM', 'BOSS']   | used 100 pts | bosses: 1
+ 58. ['MEDIUM', 'MEDIUM', 'SMALL', 'LARGE', 'SMALL', 'BOSS']   | used 100 pts | bosses: 1
+ 59. ['MEDIUM', 'MEDIUM', 'SMALL', 'MEDIUM', 'MEDIUM', 'BOSS']   | used 100 pts | bosses: 1
+ 60. ['MEDIUM', 'MEDIUM', 'SMALL', 'SMALL', 'LARGE', 'BOSS']   | used 100 pts | bosses: 1
+ 61. ['MEDIUM', 'SMALL', 'LARGE', 'MEDIUM', 'SMALL', 'BOSS']   | used 100 pts | bosses: 1
+ 62. ['MEDIUM', 'SMALL', 'LARGE', 'SMALL', 'MEDIUM', 'BOSS']   | used 100 pts | bosses: 1
+ 63. ['MEDIUM', 'SMALL', 'MEDIUM', 'LARGE', 'SMALL', 'BOSS']   | used 100 pts | bosses: 1
+ 64. ['MEDIUM', 'SMALL', 'MEDIUM', 'MEDIUM', 'MEDIUM', 'BOSS']   | used 100 pts | bosses: 1
+ 65. ['MEDIUM', 'SMALL', 'MEDIUM', 'SMALL', 'LARGE', 'BOSS']   | used 100 pts | bosses: 1
+ 66. ['MEDIUM', 'SMALL', 'SMALL', 'LARGE', 'MEDIUM', 'BOSS']   | used 100 pts | bosses: 1
+ 67. ['MEDIUM', 'SMALL', 'SMALL', 'MEDIUM', 'LARGE', 'BOSS']   | used 100 pts | bosses: 1
+ 68. ['SMALL', 'BOSS', 'SMALL', 'SMALL', 'SMALL', 'BOSS']   | used 100 pts | bosses: 2
+ 69. ['SMALL', 'LARGE', 'LARGE', 'SMALL', 'SMALL', 'BOSS']   | used 100 pts | bosses: 1
+ 70. ['SMALL', 'LARGE', 'MEDIUM', 'MEDIUM', 'SMALL', 'BOSS']   | used 100 pts | bosses: 1
+ 71. ['SMALL', 'LARGE', 'MEDIUM', 'SMALL', 'MEDIUM', 'BOSS']   | used 100 pts | bosses: 1
+ 72. ['SMALL', 'LARGE', 'SMALL', 'LARGE', 'SMALL', 'BOSS']   | used 100 pts | bosses: 1
+ 73. ['SMALL', 'LARGE', 'SMALL', 'MEDIUM', 'MEDIUM', 'BOSS']   | used 100 pts | bosses: 1
+ 74. ['SMALL', 'LARGE', 'SMALL', 'SMALL', 'LARGE', 'BOSS']   | used 100 pts | bosses: 1
+ 75. ['SMALL', 'MEDIUM', 'LARGE', 'MEDIUM', 'SMALL', 'BOSS']   | used 100 pts | bosses: 1
+ 76. ['SMALL', 'MEDIUM', 'LARGE', 'SMALL', 'MEDIUM', 'BOSS']   | used 100 pts | bosses: 1
+ 77. ['SMALL', 'MEDIUM', 'MEDIUM', 'LARGE', 'SMALL', 'BOSS']   | used 100 pts | bosses: 1
+ 78. ['SMALL', 'MEDIUM', 'MEDIUM', 'MEDIUM', 'MEDIUM', 'BOSS']   | used 100 pts | bosses: 1
+ 79. ['SMALL', 'MEDIUM', 'MEDIUM', 'SMALL', 'LARGE', 'BOSS']   | used 100 pts | bosses: 1
+ 80. ['SMALL', 'MEDIUM', 'SMALL', 'LARGE', 'MEDIUM', 'BOSS']   | used 100 pts | bosses: 1
+ 81. ['SMALL', 'MEDIUM', 'SMALL', 'MEDIUM', 'LARGE', 'BOSS']   | used 100 pts | bosses: 1
+ 82. ['SMALL', 'SMALL', 'BOSS', 'SMALL', 'SMALL', 'BOSS']   | used 100 pts | bosses: 2
+ 83. ['SMALL', 'SMALL', 'LARGE', 'LARGE', 'SMALL', 'BOSS']   | used 100 pts | bosses: 1
+ 84. ['SMALL', 'SMALL', 'LARGE', 'MEDIUM', 'MEDIUM', 'BOSS']   | used 100 pts | bosses: 1
+ 85. ['SMALL', 'SMALL', 'LARGE', 'SMALL', 'LARGE', 'BOSS']   | used 100 pts | bosses: 1
+ 86. ['SMALL', 'SMALL', 'MEDIUM', 'LARGE', 'MEDIUM', 'BOSS']   | used 100 pts | bosses: 1
+ 87. ['SMALL', 'SMALL', 'MEDIUM', 'MEDIUM', 'LARGE', 'BOSS']   | used 100 pts | bosses: 1
+ 88. ['SMALL', 'SMALL', 'SMALL', 'BOSS', 'SMALL', 'BOSS']   | used 100 pts | bosses: 2
+ 89. ['SMALL', 'SMALL', 'SMALL', 'LARGE', 'LARGE', 'BOSS']   | used 100 pts | bosses: 1
+ 90. ['SMALL', 'SMALL', 'SMALL', 'SMALL', 'BOSS', 'BOSS']   | used 100 pts | bosses: 2
+ 91. ['LARGE', 'SMALL', 'SMALL', 'SMALL', 'SMALL', 'SMALL', 'BOSS']   | used 100 pts | bosses: 1
+ 92. ['MEDIUM', 'MEDIUM', 'SMALL', 'SMALL', 'SMALL', 'SMALL', 'BOSS']   | used 100 pts | bosses: 1
+ 93. ['MEDIUM', 'SMALL', 'MEDIUM', 'SMALL', 'SMALL', 'SMALL', 'BOSS']   | used 100 pts | bosses: 1
+ 94. ['MEDIUM', 'SMALL', 'SMALL', 'MEDIUM', 'SMALL', 'SMALL', 'BOSS']   | used 100 pts | bosses: 1
+ 95. ['MEDIUM', 'SMALL', 'SMALL', 'SMALL', 'MEDIUM', 'SMALL', 'BOSS']   | used 100 pts | bosses: 1
+ 96. ['MEDIUM', 'SMALL', 'SMALL', 'SMALL', 'SMALL', 'MEDIUM', 'BOSS']   | used 100 pts | bosses: 1
+ 97. ['SMALL', 'LARGE', 'SMALL', 'SMALL', 'SMALL', 'SMALL', 'BOSS']   | used 100 pts | bosses: 1
+ 98. ['SMALL', 'MEDIUM', 'MEDIUM', 'SMALL', 'SMALL', 'SMALL', 'BOSS']   | used 100 pts | bosses: 1
+ 99. ['SMALL', 'MEDIUM', 'SMALL', 'MEDIUM', 'SMALL', 'SMALL', 'BOSS']   | used 100 pts | bosses: 1
+100. ['SMALL', 'MEDIUM', 'SMALL', 'SMALL', 'MEDIUM', 'SMALL', 'BOSS']   | used 100 pts | bosses: 1
+101. ['SMALL', 'MEDIUM', 'SMALL', 'SMALL', 'SMALL', 'MEDIUM', 'BOSS']   | used 100 pts | bosses: 1
+102. ['SMALL', 'SMALL', 'LARGE', 'SMALL', 'SMALL', 'SMALL', 'BOSS']   | used 100 pts | bosses: 1
+103. ['SMALL', 'SMALL', 'MEDIUM', 'MEDIUM', 'SMALL', 'SMALL', 'BOSS']   | used 100 pts | bosses: 1
+104. ['SMALL', 'SMALL', 'MEDIUM', 'SMALL', 'MEDIUM', 'SMALL', 'BOSS']   | used 100 pts | bosses: 1
+105. ['SMALL', 'SMALL', 'MEDIUM', 'SMALL', 'SMALL', 'MEDIUM', 'BOSS']   | used 100 pts | bosses: 1
+106. ['SMALL', 'SMALL', 'SMALL', 'LARGE', 'SMALL', 'SMALL', 'BOSS']   | used 100 pts | bosses: 1
+107. ['SMALL', 'SMALL', 'SMALL', 'MEDIUM', 'MEDIUM', 'SMALL', 'BOSS']   | used 100 pts | bosses: 1
+108. ['SMALL', 'SMALL', 'SMALL', 'MEDIUM', 'SMALL', 'MEDIUM', 'BOSS']   | used 100 pts | bosses: 1
+109. ['SMALL', 'SMALL', 'SMALL', 'SMALL', 'LARGE', 'SMALL', 'BOSS']   | used 100 pts | bosses: 1
+110. ['SMALL', 'SMALL', 'SMALL', 'SMALL', 'MEDIUM', 'MEDIUM', 'BOSS']   | used 100 pts | bosses: 1
+111. ['SMALL', 'SMALL', 'SMALL', 'SMALL', 'SMALL', 'LARGE', 'BOSS']   | used 100 pts | bosses: 1
+112. ['SMALL', 'SMALL', 'SMALL', 'SMALL', 'SMALL', 'SMALL', 'SMALL', 'BOSS']   | used 100 pts | bosses: 1
+113. ['BOSS', 'LARGE', 'MEDIUM', 'BOSS']   | used 95 pts | bosses: 2
+114. ['BOSS', 'MEDIUM', 'LARGE', 'BOSS']   | used 95 pts | bosses: 2
+115. ['LARGE', 'BOSS', 'MEDIUM', 'BOSS']   | used 95 pts | bosses: 2
+116. ['LARGE', 'MEDIUM', 'BOSS', 'BOSS']   | used 95 pts | bosses: 2
+117. ['MEDIUM', 'BOSS', 'LARGE', 'BOSS']   | used 95 pts | bosses: 2
+118. ['MEDIUM', 'LARGE', 'BOSS', 'BOSS']   | used 95 pts | bosses: 2
+119. ['BOSS', 'MEDIUM', 'SMALL', 'SMALL', 'BOSS']   | used 95 pts | bosses: 2
+120. ['BOSS', 'SMALL', 'MEDIUM', 'SMALL', 'BOSS']   | used 95 pts | bosses: 2
+121. ['BOSS', 'SMALL', 'SMALL', 'MEDIUM', 'BOSS']   | used 95 pts | bosses: 2
+122. ['LARGE', 'LARGE', 'MEDIUM', 'SMALL', 'BOSS']   | used 95 pts | bosses: 1
+123. ['LARGE', 'LARGE', 'SMALL', 'MEDIUM', 'BOSS']   | used 95 pts | bosses: 1
+124. ['LARGE', 'MEDIUM', 'LARGE', 'SMALL', 'BOSS']   | used 95 pts | bosses: 1
+125. ['LARGE', 'MEDIUM', 'MEDIUM', 'MEDIUM', 'BOSS']   | used 95 pts | bosses: 1
+126. ['LARGE', 'MEDIUM', 'SMALL', 'LARGE', 'BOSS']   | used 95 pts | bosses: 1
+127. ['LARGE', 'SMALL', 'LARGE', 'MEDIUM', 'BOSS']   | used 95 pts | bosses: 1
+128. ['LARGE', 'SMALL', 'MEDIUM', 'LARGE', 'BOSS']   | used 95 pts | bosses: 1
+129. ['MEDIUM', 'BOSS', 'SMALL', 'SMALL', 'BOSS']   | used 95 pts | bosses: 2
+130. ['MEDIUM', 'LARGE', 'LARGE', 'SMALL', 'BOSS']   | used 95 pts | bosses: 1
+131. ['MEDIUM', 'LARGE', 'MEDIUM', 'MEDIUM', 'BOSS']   | used 95 pts | bosses: 1
+132. ['MEDIUM', 'LARGE', 'SMALL', 'LARGE', 'BOSS']   | used 95 pts | bosses: 1
+133. ['MEDIUM', 'MEDIUM', 'LARGE', 'MEDIUM', 'BOSS']   | used 95 pts | bosses: 1
+134. ['MEDIUM', 'MEDIUM', 'MEDIUM', 'LARGE', 'BOSS']   | used 95 pts | bosses: 1
+135. ['MEDIUM', 'SMALL', 'BOSS', 'SMALL', 'BOSS']   | used 95 pts | bosses: 2
+136. ['MEDIUM', 'SMALL', 'LARGE', 'LARGE', 'BOSS']   | used 95 pts | bosses: 1
+137. ['MEDIUM', 'SMALL', 'SMALL', 'BOSS', 'BOSS']   | used 95 pts | bosses: 2
+138. ['SMALL', 'BOSS', 'MEDIUM', 'SMALL', 'BOSS']   | used 95 pts | bosses: 2
+139. ['SMALL', 'BOSS', 'SMALL', 'MEDIUM', 'BOSS']   | used 95 pts | bosses: 2
+140. ['SMALL', 'LARGE', 'LARGE', 'MEDIUM', 'BOSS']   | used 95 pts | bosses: 1
+141. ['SMALL', 'LARGE', 'MEDIUM', 'LARGE', 'BOSS']   | used 95 pts | bosses: 1
+142. ['SMALL', 'MEDIUM', 'BOSS', 'SMALL', 'BOSS']   | used 95 pts | bosses: 2
+143. ['SMALL', 'MEDIUM', 'LARGE', 'LARGE', 'BOSS']   | used 95 pts | bosses: 1
+144. ['SMALL', 'MEDIUM', 'SMALL', 'BOSS', 'BOSS']   | used 95 pts | bosses: 2
+145. ['SMALL', 'SMALL', 'BOSS', 'MEDIUM', 'BOSS']   | used 95 pts | bosses: 2
+146. ['SMALL', 'SMALL', 'MEDIUM', 'BOSS', 'BOSS']   | used 95 pts | bosses: 2
+147. ['LARGE', 'MEDIUM', 'SMALL', 'SMALL', 'SMALL', 'BOSS']   | used 95 pts | bosses: 1
+148. ['LARGE', 'SMALL', 'MEDIUM', 'SMALL', 'SMALL', 'BOSS']   | used 95 pts | bosses: 1
+149. ['LARGE', 'SMALL', 'SMALL', 'MEDIUM', 'SMALL', 'BOSS']   | used 95 pts | bosses: 1
+150. ['LARGE', 'SMALL', 'SMALL', 'SMALL', 'MEDIUM', 'BOSS']   | used 95 pts | bosses: 1
+151. ['MEDIUM', 'LARGE', 'SMALL', 'SMALL', 'SMALL', 'BOSS']   | used 95 pts | bosses: 1
+152. ['MEDIUM', 'MEDIUM', 'MEDIUM', 'SMALL', 'SMALL', 'BOSS']   | used 95 pts | bosses: 1
+153. ['MEDIUM', 'MEDIUM', 'SMALL', 'MEDIUM', 'SMALL', 'BOSS']   | used 95 pts | bosses: 1
+154. ['MEDIUM', 'MEDIUM', 'SMALL', 'SMALL', 'MEDIUM', 'BOSS']   | used 95 pts | bosses: 1
+155. ['MEDIUM', 'SMALL', 'LARGE', 'SMALL', 'SMALL', 'BOSS']   | used 95 pts | bosses: 1
+156. ['MEDIUM', 'SMALL', 'MEDIUM', 'MEDIUM', 'SMALL', 'BOSS']   | used 95 pts | bosses: 1
+157. ['MEDIUM', 'SMALL', 'MEDIUM', 'SMALL', 'MEDIUM', 'BOSS']   | used 95 pts | bosses: 1
+158. ['MEDIUM', 'SMALL', 'SMALL', 'LARGE', 'SMALL', 'BOSS']   | used 95 pts | bosses: 1
+159. ['MEDIUM', 'SMALL', 'SMALL', 'MEDIUM', 'MEDIUM', 'BOSS']   | used 95 pts | bosses: 1
+160. ['MEDIUM', 'SMALL', 'SMALL', 'SMALL', 'LARGE', 'BOSS']   | used 95 pts | bosses: 1
+161. ['SMALL', 'LARGE', 'MEDIUM', 'SMALL', 'SMALL', 'BOSS']   | used 95 pts | bosses: 1
+162. ['SMALL', 'LARGE', 'SMALL', 'MEDIUM', 'SMALL', 'BOSS']   | used 95 pts | bosses: 1
+163. ['SMALL', 'LARGE', 'SMALL', 'SMALL', 'MEDIUM', 'BOSS']   | used 95 pts | bosses: 1
+164. ['SMALL', 'MEDIUM', 'LARGE', 'SMALL', 'SMALL', 'BOSS']   | used 95 pts | bosses: 1
+165. ['SMALL', 'MEDIUM', 'MEDIUM', 'MEDIUM', 'SMALL', 'BOSS']   | used 95 pts | bosses: 1
+166. ['SMALL', 'MEDIUM', 'MEDIUM', 'SMALL', 'MEDIUM', 'BOSS']   | used 95 pts | bosses: 1
+167. ['SMALL', 'MEDIUM', 'SMALL', 'LARGE', 'SMALL', 'BOSS']   | used 95 pts | bosses: 1
+168. ['SMALL', 'MEDIUM', 'SMALL', 'MEDIUM', 'MEDIUM', 'BOSS']   | used 95 pts | bosses: 1
+169. ['SMALL', 'MEDIUM', 'SMALL', 'SMALL', 'LARGE', 'BOSS']   | used 95 pts | bosses: 1
+170. ['SMALL', 'SMALL', 'LARGE', 'MEDIUM', 'SMALL', 'BOSS']   | used 95 pts | bosses: 1
+171. ['SMALL', 'SMALL', 'LARGE', 'SMALL', 'MEDIUM', 'BOSS']   | used 95 pts | bosses: 1
+172. ['SMALL', 'SMALL', 'MEDIUM', 'LARGE', 'SMALL', 'BOSS']   | used 95 pts | bosses: 1
+173. ['SMALL', 'SMALL', 'MEDIUM', 'MEDIUM', 'MEDIUM', 'BOSS']   | used 95 pts | bosses: 1
+174. ['SMALL', 'SMALL', 'MEDIUM', 'SMALL', 'LARGE', 'BOSS']   | used 95 pts | bosses: 1
+175. ['SMALL', 'SMALL', 'SMALL', 'LARGE', 'MEDIUM', 'BOSS']   | used 95 pts | bosses: 1
+176. ['SMALL', 'SMALL', 'SMALL', 'MEDIUM', 'LARGE', 'BOSS']   | used 95 pts | bosses: 1
+177. ['MEDIUM', 'SMALL', 'SMALL', 'SMALL', 'SMALL', 'SMALL', 'BOSS']   | used 95 pts | bosses: 1
+178. ['SMALL', 'MEDIUM', 'SMALL', 'SMALL', 'SMALL', 'SMALL', 'BOSS']   | used 95 pts | bosses: 1
+179. ['SMALL', 'SMALL', 'MEDIUM', 'SMALL', 'SMALL', 'SMALL', 'BOSS']   | used 95 pts | bosses: 1
+180. ['SMALL', 'SMALL', 'SMALL', 'MEDIUM', 'SMALL', 'SMALL', 'BOSS']   | used 95 pts | bosses: 1
+181. ['SMALL', 'SMALL', 'SMALL', 'SMALL', 'MEDIUM', 'SMALL', 'BOSS']   | used 95 pts | bosses: 1
+182. ['SMALL', 'SMALL', 'SMALL', 'SMALL', 'SMALL', 'MEDIUM', 'BOSS']   | used 95 pts | bosses: 1
+
+============================================================
+NOTABLE OUTCOMES
+============================================================
+
+All sequences with 3 bosses (very rare):
+  - ['BOSS', 'BOSS', 'SMALL', 'BOSS']
+  - ['BOSS', 'SMALL', 'BOSS', 'BOSS']
+  - ['SMALL', 'BOSS', 'BOSS', 'BOSS']
+
+All 4-room dungeons:
+  - ['BOSS', 'LARGE', 'MEDIUM', 'BOSS'] (95)
+  - ['BOSS', 'MEDIUM', 'LARGE', 'BOSS'] (95)
+  - ['LARGE', 'BOSS', 'MEDIUM', 'BOSS'] (95)
+  - ['LARGE', 'MEDIUM', 'BOSS', 'BOSS'] (95)
+  - ['MEDIUM', 'BOSS', 'LARGE', 'BOSS'] (95)
+  - ['MEDIUM', 'LARGE', 'BOSS', 'BOSS'] (95)
+  - ['BOSS', 'BOSS', 'SMALL', 'BOSS'] (100)
+  - ['BOSS', 'LARGE', 'LARGE', 'BOSS'] (100)
+  - ['BOSS', 'SMALL', 'BOSS', 'BOSS'] (100)
+  - ['LARGE', 'BOSS', 'LARGE', 'BOSS'] (100)
+  - ['LARGE', 'LARGE', 'BOSS', 'BOSS'] (100)
+  - ['SMALL', 'BOSS', 'BOSS', 'BOSS'] (100)
+
+The only 8-room dungeon (maximum length):
+  - ['SMALL', 'SMALL', 'SMALL', 'SMALL', 'SMALL', 'SMALL', 'SMALL', 'BOSS'] (100 pts)
+
+The longest possible prefix of non-boss rooms tends to produce many SMALLs because they are the cheapest and stay affordable longer.
+
+This file was generated by exhaustively exploring the decision tree of the generation algorithm.
+Every sequence above is reachable by some series of random choices.

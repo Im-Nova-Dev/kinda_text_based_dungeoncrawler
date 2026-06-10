@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://d3a1vsdmqivmq"]
+
+[node name="main" type="Control" unique_id=1917663988]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=793030485]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=362792302]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="main_screen" type="PanelContainer" parent="VBoxContainer/HBoxContainer" unique_id=169286582]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="stats_container" type="PanelContainer" parent="VBoxContainer/HBoxContainer" unique_id=414046061]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="text_container" type="PanelContainer" parent="VBoxContainer" unique_id=1634949045]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/text_container" unique_id=1680812450]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/text_container/MarginContainer" unique_id=989591784]
+layout_mode = 2
+
+[node name="chat_vbox" type="VBoxContainer" parent="VBoxContainer/text_container/MarginContainer/ScrollContainer" unique_id=1568078952]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="game_message" type="RichTextLabel" parent="VBoxContainer/text_container/MarginContainer/ScrollContainer/chat_vbox" unique_id=1110646656]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+text = "CHARACTERS : 
+ANNA | MAGE | THICC AF | "

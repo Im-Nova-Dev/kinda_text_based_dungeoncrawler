@@ -1,0 +1,14 @@
+2026-06-08 08:42
+---
+
+game design start , 
+3 gui items , main windows , side stat window and bottom action history window 
+
+
+
+GENERATE DUNGEON FIRST -> then you can generate each room based on dungeon level
+
+point system : 100 difficulty levels , 4 rooms -> 25 levels per room ,
+maluable point system to allocated difficulty properly 
+
+
