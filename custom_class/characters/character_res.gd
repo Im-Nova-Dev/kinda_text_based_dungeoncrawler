@@ -24,6 +24,7 @@ var current_hp
 var max_mp
 var current_mp
 
+
 # combat skills
 var constitution: int #+defense,+health,+carry weight,-poison duration,%phy def
 var strength: int #+attack power, +stun power, +block chance,%to break door/chest/etc
