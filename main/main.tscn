@@ -51,3 +51,38 @@ custom_minimum_size = Vector2(0, 42)
 layout_mode = 2
 text = "CHARACTERS : 
 ANNA | MAGE | THICC AF | "
+
+[node name="combat_gui" type="Control" parent="." unique_id=845338665]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="combat_menu_1" type="PanelContainer" parent="combat_gui" unique_id=1203016531]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="combat_menu_2" type="PanelContainer" parent="combat_gui" unique_id=78422616]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="combat_menu_3" type="PanelContainer" parent="combat_gui" unique_id=3270048]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="combat_menu_4" type="PanelContainer" parent="combat_gui" unique_id=282570796]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="combat_menu_5" type="PanelContainer" parent="combat_gui" unique_id=1475218017]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="combat_menu_6" type="PanelContainer" parent="combat_gui" unique_id=269592740]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
