@@ -30,7 +30,8 @@ var character_age : int
 #some characters would grow old and just leave the party to stay in
 # the safe zone out of fear of death
 #
-
+var character_name : String 
+# bible heavy names
 
 var main_hand
 var off_hand
@@ -40,14 +41,30 @@ var accessory_2
 
 var character_level:int
 
-enum c_profession {TEMPLAR,KNIGHT,SURVIVALIST,COOK,GATHERER,HUNTER,BUTCHER}
+enum c_profession {KNIGHT,CLERIC}
 var character_profession : c_profession
+
+var character_sins:c_sins
+enum c_sins {LUST,GREED,}
+# each sin gives the player a debuff
+
+
+
+
+#TEMPLAR,KNIGHT,SURVIVALIST,COOK,GATHERER,HUNTER,BUTCHER,CLERIC,PRIEST
 
 # TODO: spell identification , item identification , cursed items,
 
 #TODO : color coated rarities for items , just change color of text displayed 
 # when displaying that item
 
+#TODO: if player dies and losses game , the strongest item will be dropped and you 
+# and you can get it back with the next party   
+
+#TODO : every X floors , there is a neutral zone or a wildnerness zone without monsters
+# these grounds are sacred so demonds cannot enter 
+
+#TODO : dmage numbers are colored
 
 
 # PROFESSION (give characters skills, bonuses and malus depending on what)
