@@ -30,14 +30,36 @@ var character_age : int
 #some characters would grow old and just leave the party to stay in
 # the safe zone out of fear of death
 #
-var weapon
+
+
+var main_hand
+var off_hand
 var armor
-var accessory
+var accessory_1
+var accessory_2
 
 var character_level:int
 
-enum c_class {TEMPLAR,KNIGHT}
-var character_class : c_class
+enum c_profession {TEMPLAR,KNIGHT,SURVIVALIST,COOK,GATHERER,HUNTER,BUTCHER}
+var character_profession : c_profession
+
+# TODO: spell identification , item identification , cursed items,
+
+#TODO : color coated rarities for items , just change color of text displayed 
+# when displaying that item
+
+
+
+# PROFESSION (give characters skills, bonuses and malus depending on what)
+#forgemage:int#mage that upgrade items (need to renamea and find equivalent)
+
+#survivalist : int # better chance to find food/water,reduced hunger/thirst,
+#cook : int #craft better meals,ration food for longer, use less ingredients
+#gatherer : int #gather more plants , mushroom , etc
+#hunter : int #gather more meat from animals and edible monsters, more damage vs animals
+#butcher # gathering food and stuff from enemies
+
+
 var char_icon : Texture
 
 var current_hunger : int # if hunger is 0 , character dies after 5 rooms
@@ -55,28 +77,18 @@ var current_hp
 var max_mp
 var current_mp
 
-
+var inventory_weight_contribution : float = 0.5 #kg
 # combat skills
 var constitution: int #+defense,+health,+carry weight,-poison duration,%phy def
 var strength: int #+attack power, +stun power, +block chance,%to break door/chest/etc
 var intelligence: int #+magic power , +mana amount, %mag def
 var dexterity: int #+accuracy, +dodge ,+parry
-var wisdom: int #+skill points earned modifier ,-confusion duration,%elemental defense
 
-
-
-var butcher # gathering food and stuff from enemies
-
-
-# non combat skills
-var investigation : int # ability to spot traps and hidden stuff, find better loot
-var survival : int # better chance to find food/water,reduced hunger/thirst,
-var cooking : int #craft better meals,ration food for longer, use less ingredients
-var gathering : int #gather more plants , mushroom , etc
-var hunting : int #gather more meat from animals and edible monsters, more damage vs animals
-
+var item_identification:int
 #everything skills
 var faith: int # bonus to crits ,bonus to everything
+var investigation : int # ability to spot traps and hidden stuff, find better loot
+
 
 enum character_skills {
 	perception,survival_instinct,willpower,fast_healing,cannibal

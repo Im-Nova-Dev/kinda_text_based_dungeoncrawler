@@ -16,7 +16,7 @@ var is_enemy_in_room : bool
 
 var r_type : room_size
 var lootable_containers : int
-
+var r_difficulty_points : int
 
 static func get_cost(type: room_size) -> int:
 	match type:

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d3a1vsdmqivmq"]
 
 [ext_resource type="Script" uid="uid://coyvb6pkg1arh" path="res://main/main.gd" id="1_53q0u"]
+[ext_resource type="Texture2D" uid="uid://583smilhwcsr" path="res://assets/icon.svg" id="2_pjrb6"]
 
 [node name="main" type="Control" unique_id=1917663988]
 layout_mode = 3
@@ -31,58 +32,152 @@ size_flags_horizontal = 3
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 
-[node name="text_container" type="PanelContainer" parent="VBoxContainer" unique_id=1634949045]
+[node name="party_container" type="PanelContainer" parent="VBoxContainer" unique_id=1634949045]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/text_container" unique_id=1680812450]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/party_container" unique_id=1680812450]
 layout_mode = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/text_container/MarginContainer" unique_id=989591784]
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/party_container/MarginContainer" unique_id=989591784]
 layout_mode = 2
 
-[node name="chat_vbox" type="VBoxContainer" parent="VBoxContainer/text_container/MarginContainer/ScrollContainer" unique_id=1568078952]
+[node name="party_container" type="VBoxContainer" parent="VBoxContainer/party_container/MarginContainer/ScrollContainer" unique_id=1568078952]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="game_message" type="RichTextLabel" parent="VBoxContainer/text_container/MarginContainer/ScrollContainer/chat_vbox" unique_id=1110646656]
-custom_minimum_size = Vector2(0, 42)
-layout_mode = 2
-text = "CHARACTERS : 
-ANNA | MAGE | THICC AF | "
-
 [node name="combat_gui" type="Control" parent="." unique_id=845338665]
+visible = false
+anchors_preset = 0
+offset_left = 194.0
+offset_top = 163.0
+offset_right = 429.0
+offset_bottom = 292.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="combat_gui" unique_id=529714524]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="combat_menu_1" type="TabContainer" parent="combat_gui/VBoxContainer" unique_id=1606625849]
+layout_mode = 2
+size_flags_vertical = 3
+current_tab = 1
+
+[node name="fight2" type="GridContainer" parent="combat_gui/VBoxContainer/combat_menu_1" unique_id=157053878]
+visible = false
+layout_mode = 2
+columns = 2
+metadata/_tab_index = 0
+
+[node name="attack_button" type="Button" parent="combat_gui/VBoxContainer/combat_menu_1/fight2" unique_id=1293143101]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "ATTACK"
+
+[node name="shieldblock_button" type="Button" parent="combat_gui/VBoxContainer/combat_menu_1/fight2" unique_id=1683358268]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "SHEIDLBLOCK"
+
+[node name="guard_button" type="Button" parent="combat_gui/VBoxContainer/combat_menu_1/fight2" unique_id=140325379]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "GUARD"
+
+[node name="parry_button" type="Button" parent="combat_gui/VBoxContainer/combat_menu_1/fight2" unique_id=936003514]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "PARRY"
+
+[node name="skills" type="ScrollContainer" parent="combat_gui/VBoxContainer/combat_menu_1" unique_id=1199335210]
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="skills" type="VBoxContainer" parent="combat_gui/VBoxContainer/combat_menu_1/skills" unique_id=858359792]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="combat_gui/VBoxContainer/combat_menu_1/skills/skills" unique_id=1086630164]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="combat_gui/VBoxContainer/combat_menu_1/skills/skills/HBoxContainer" unique_id=1099387066]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "skill name"
+
+[node name="VSeparator" type="VSeparator" parent="combat_gui/VBoxContainer/combat_menu_1/skills/skills/HBoxContainer" unique_id=1077084242]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="combat_gui/VBoxContainer/combat_menu_1/skills/skills/HBoxContainer" unique_id=1065164478]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Cost"
+
+[node name="VSeparator2" type="VSeparator" parent="combat_gui/VBoxContainer/combat_menu_1/skills/skills/HBoxContainer" unique_id=1365170370]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="combat_gui/VBoxContainer/combat_menu_1/skills/skills/HBoxContainer" unique_id=250919772]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "type"
+
+[node name="HSeparator" type="HSeparator" parent="combat_gui/VBoxContainer/combat_menu_1/skills/skills" unique_id=1220247758]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="combat_gui/VBoxContainer/combat_menu_1/skills/skills" unique_id=246871180]
+layout_mode = 2
+text = "THUNDER | 100 mp | MAG"
+icon = ExtResource("2_pjrb6")
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="items" type="ScrollContainer" parent="combat_gui/VBoxContainer/combat_menu_1" unique_id=1551558821]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="items" type="VBoxContainer" parent="combat_gui/VBoxContainer/combat_menu_1/items" unique_id=821242598]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="combat_gui/VBoxContainer/combat_menu_1/items/items" unique_id=2095503608]
+layout_mode = 2
+text = "FIGHT "
+
+[node name="Button3" type="Button" parent="combat_gui/VBoxContainer/combat_menu_1/items/items" unique_id=1943821530]
+layout_mode = 2
+text = "ITEMS"
+
+[node name="Button4" type="Button" parent="combat_gui/VBoxContainer/combat_menu_1/items/items" unique_id=799515270]
+layout_mode = 2
+text = "GUARD"
+
+[node name="Button5" type="Button" parent="combat_gui/VBoxContainer/combat_menu_1/items/items" unique_id=411775429]
+layout_mode = 2
+text = "PARRY"
+
+[node name="HSeparator" type="HSeparator" parent="combat_gui/VBoxContainer" unique_id=1966568688]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="combat_gui/VBoxContainer" unique_id=1323164344]
+layout_mode = 2
+text = "CHARACTER NAME"
+
+[node name="inventory_gui" type="Control" parent="." unique_id=824534640]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="combat_menu_1" type="PanelContainer" parent="combat_gui" unique_id=1203016531]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="combat_menu_2" type="PanelContainer" parent="combat_gui" unique_id=78422616]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="combat_menu_3" type="PanelContainer" parent="combat_gui" unique_id=3270048]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="combat_menu_4" type="PanelContainer" parent="combat_gui" unique_id=282570796]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="combat_menu_5" type="PanelContainer" parent="combat_gui" unique_id=1475218017]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="combat_menu_6" type="PanelContainer" parent="combat_gui" unique_id=269592740]
-layout_mode = 0
+[node name="safe_level_gui" type="Control" parent="." unique_id=931723560]
+anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0

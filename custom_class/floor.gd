@@ -2,7 +2,7 @@ extends Resource
 class_name floor_res
 
 var f_name: String = ""
-var f_difficulty_point: int = 0
+var f_difficulty_point: int = 100
 var generation_seed: int = -1
 
 var f_rooms: Array[room_res] = []
