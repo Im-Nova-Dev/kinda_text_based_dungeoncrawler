@@ -46,7 +46,7 @@ var character_profession : c_profession
 
 var character_sins:c_sins
 enum c_sins {LUST,GREED,}
-# each sin gives the player a debuff
+# each sin gives the player a debuff     
 
 
 
