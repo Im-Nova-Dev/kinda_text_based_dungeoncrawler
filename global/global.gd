@@ -12,7 +12,7 @@ var player_difficulty_points : int = 100
 func _ready() -> void:
 	pass # Replace with function body.
 func _process(delta: float) -> void:
-	printerr(delta) 
+	pass
 	# this is really just so that the fucking lsp stops screaming at me
 
 	#   Inputs: total_points, d_seed, apply_structure, structure_jitter

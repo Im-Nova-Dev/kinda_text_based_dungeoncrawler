@@ -1,20 +1,14 @@
 extends Control
 class_name main
-# main.gd 
+# main.gd
 @onready var dungeon_visualizer: Control = $dungeon_visualizer
 func _ready() -> void:
 	var test_floor = floor_res.new()
 	test_floor.generate_rooms()
 	printerr(test_floor.f_rooms,"<- rooms in a floor test")
 func _process(delta: float) -> void:
-	printerr(delta)
+	pass
 
-
-
-
-
-
-#
 
 
 
