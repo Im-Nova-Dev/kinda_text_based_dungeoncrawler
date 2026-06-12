@@ -14,7 +14,7 @@ var character_age : int
 ##combat survival
 ###age
 
-# run almost never ends with age but ageing promotes death 
+# run almost never ends with age but ageing promotes death
 #
 # melee classes will start to suffer at old age
 # magical or wisdom / intell dependent classes will suffer
@@ -24,13 +24,13 @@ var character_age : int
 # old mages would have a one hit ko move that would kill themselves
 # old clerics can live almost forever with right build
 # old warriors have a last stand , cant die for 2 turns then die
-#have artifacts that either replace party characters or make them	
+#have artifacts that either replace party characters or make them
 # age less fast
 #
 #some characters would grow old and just leave the party to stay in
 # the safe zone out of fear of death
 #
-var character_name : String 
+var character_name : String
 # bible heavy names
 
 var main_hand
@@ -46,7 +46,7 @@ var character_profession : c_profession
 
 var character_sins:c_sins
 enum c_sins {LUST,GREED,}
-# each sin gives the player a debuff     
+# each sin gives the player a debuff
 
 
 
@@ -55,14 +55,14 @@ enum c_sins {LUST,GREED,}
 
 # TODO: spell identification , item identification , cursed items,
 
-#TODO : color coated rarities for items , just change color of text displayed 
+#TODO : color coated rarities for items , just change color of text displayed
 # when displaying that item
 
-#TODO: if player dies and losses game , the strongest item will be dropped and you 
-# and you can get it back with the next party   
+#TODO: if player dies and losses game , the strongest item will be dropped and you
+# and you can get it back with the next party
 
 #TODO : every X floors , there is a neutral zone or a wildnerness zone without monsters
-# these grounds are sacred so demonds cannot enter 
+# these grounds are sacred so demonds cannot enter
 
 #TODO : dmage numbers are colored
 
@@ -82,7 +82,7 @@ var char_icon : Texture
 var current_hunger : int # if hunger is 0 , character dies after 5 rooms
 var max_hunger : int
 
-var current_thirst : int # if thirst if 0, character dies after 2 rooms
+var current_thirst : int # if thirst if 0, character dies after 1 rooms
 var max_thirst : int
 
 var hunger_tick_amount : float
@@ -101,13 +101,32 @@ var strength: int #+attack power, +stun power, +block chance,%to break door/ches
 var intelligence: int #+magic power , +mana amount, %mag def
 var dexterity: int #+accuracy, +dodge ,+parry
 
-var item_identification:int
+var item_identification:bool
+var investigation:bool# ability to spot traps and hidden stuff, find better loot
 #everything skills
 var faith: int # bonus to crits ,bonus to everything
-var investigation : int # ability to spot traps and hidden stuff, find better loot
 
 
 enum character_skills {
 	perception,survival_instinct,willpower,fast_healing,cannibal
 
 	} # gain a new skills every 10 levels ?
+
+
+
+
+func set_test_character():
+	max_hp = 100
+	current_hp = 99
+
+	max_mp = 20
+	current_mp = 10
+
+	constitution=1
+	strength=2
+	intelligence=3
+	dexterity=4
+	faith = 10
+
+
+	pass

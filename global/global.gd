@@ -12,7 +12,8 @@ var player_difficulty_points : int = 100
 func _ready() -> void:
 	pass # Replace with function body.
 func _process(delta: float) -> void:
-	printerr(delta) # this is really just so that the fucking lsp stops screaming at me
+	printerr(delta) 
+	# this is really just so that the fucking lsp stops screaming at me
 
 	#   Inputs: total_points, d_seed, apply_structure, structure_jitter
 	#   Output: floor_res with f_rooms populated according to the contract in generate_rooms
@@ -24,7 +25,6 @@ func generate_floor(total_points: int = 100, d_seed: int = -1, apply_structure: 
 func generate_room() -> room_res:
 	var room := room_res.new()
 	return room
-
 #   Inputs: number_of_floors_cleared (before this call), player_difficulty_points
 #   Outputs: player_difficulty_points increased by a random amount whose range grows with clears
 #   Guarantees: gain is always positive and grows on average; output is fully random within expanding ranges
@@ -45,11 +45,10 @@ func award_clear_points():
 
 	player_difficulty_points += gained
 	number_of_floors_cleared += 1
-
-
+# award points for next dungeon generation , difficulty and loot increase
+# *if dungeon difficulty number ends with XYZ number then spawn legendary item*
 
 
 func test():
 
 	pass
-

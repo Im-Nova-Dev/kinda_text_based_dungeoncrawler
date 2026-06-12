@@ -5,8 +5,7 @@ class_name main
 func _ready() -> void:
 	var test_floor = floor_res.new()
 	test_floor.generate_rooms()
-	dungeon_visualizer.set_dungeon(test_floor)
-	pass # Replace with function body.
+	printerr(test_floor.f_rooms,"<- rooms in a floor test")
 func _process(delta: float) -> void:
 	printerr(delta)
 
@@ -77,3 +76,17 @@ func combat_end():
 	# ends the combat , hides all the combat GUI
 	# distribute loot
 	pass
+
+# all test functions
+func _on_test_spawn_player_pressed() -> void:
+	var test_character = character_res.new()
+	test_character.set_test_character()
+	Global.player_party.append(test_character)
+
+
+func _on_test_spawn_enemy_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_test_start_combat_pressed() -> void:
+	pass # Replace with function body.
